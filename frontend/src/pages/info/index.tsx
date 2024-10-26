@@ -13,7 +13,7 @@ export default () => {
 		<div className={styles.queryBalance}>
 			<Cell.Group>
 				<Cell title="Ton Address" label={address} />
-				<Cell title="Near Vault Address" label="pay.test.neton" />
+				<Cell title="Near Vault Account" label="pay.test.neton" />
 				<Cell title="$NEAR Balance" label={appStates.balance} />
 			</Cell.Group>
 			<TabBar />
