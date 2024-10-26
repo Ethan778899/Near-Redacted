@@ -92,8 +92,8 @@ export default () => {
 					</div>
 				}
 			>
-				<Form.Item name="address" label="Address">
-					<Input placeholder="Please enter recipient address" />
+				<Form.Item name="address" label="account">
+					<Input placeholder="Please enter recipient account" />
 				</Form.Item>
 				<Form.Item name="amount" label="Amount">
 					<Input placeholder="Please enter amount" />
