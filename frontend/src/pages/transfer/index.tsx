@@ -39,6 +39,7 @@ export default () => {
 			duration: 0,
 		});
 		try {
+			console.log(wallet);
 			const data = {
 				address: wallet!.account.address,
 				network: wallet!.account.chain,
@@ -51,9 +52,20 @@ export default () => {
 
 			const { token } = (await postCheckProof(data)) as any;
 
-			Dialog.alert({
+            Dialog.alert({
+                style:'color:red;',
 				title: "The Signature of Transfer",
-				message: token,
+				message: JSON.stringify({
+					call_funciton: "process_ton_proof",
+					proof_payload: {
+						from: "pay.test.neton",
+						to: "receive.test.netwon",
+						action: "Transfer",
+						value: 5,
+					},
+					signature: token,
+					pub_key: wallet?.account.publicKey,
+				}),
 				confirmButtonText: "close",
 			});
 			setTimeout(() => {
